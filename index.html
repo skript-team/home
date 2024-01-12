@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Malgun+Gothic:wght@350&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', sans-serif;
+            scroll-behavior: smooth;
+            overflow: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: transparent;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 10px;
+            padding-right: 2%;
+        }
+        .navbar a {
+            font-size: 1rem;
+            font-weight: 350;
+            color: lightgray;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .navbar a.active {
+            color: white;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .section-title {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .section-bodies {
+            /* Align horizontally left, vertically center */
+            align-items: flex-start;
+            text-align: left;
+            justify-content: center;
+        }
+        .section-padding {
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .content { /* Specific styling for About section */
+            align-items: flex-start;
+            text-align: left;
+        }
+        .arrow {
+            border: solid white;
+            border-width: 0 8px 8px 0;
+            display: inline-block;
+            padding: 13px;
+            transform: rotate(45deg);
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+        .arrow-down {
+            bottom: 20px;
+        }
+        .arrow-up {
+            top: 20px;
+            transform: translateX(-50%) rotate(-135deg);
+        }
+        #home { background-color: black; }
+        #about { background-color: rgb(20,0,0); }
+        #members { background-color: rgb(0, 0, 30); }
+        #achievements { background-color: rgb(4, 20, 0); }
+        .footer {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <nav class="navbar">
+        <a href="#home" class="navbar-link">Home</a>
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#members" class="navbar-link">Members</a>
+        <a href="#achievements" class="navbar-link">Achievements</a>
+    </nav>
+
+    <section id="home" class="section section-title">
+        <h1 class="text-8xl font-semibold">&lt;/skript&gt;</h1>
+        <p class="text-xl mt-3">Ventures to the cyber world</p>
+    </section>
+
+    <section id="about" class="section section-padding content section-bodies">
+        <div class="left" style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </section>
+
+    <section id="members" class="section section-padding section-bodies">
+        <div class="left">
+            <section id="member-hysong" style="padding: 3%; width: 80%;">
+                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Hoyoun Song</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section id="member-khkim" style="padding: 3%; width: 80%;">
+                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Kihyon Kim</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section id="member-smchoi" style="padding: 3%; width: 80%;">
+                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Seongmin Choi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+        </div>
+    </section>
+
+    <section id="achievements" class="section section-padding section-bodies">
+        <div class="left">
+            <section style="padding: 3%; width: 80%;">
+                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Offensive Security Certified Professionals</h2>
+                <p>Working On it!</p>
+            </section>
+        </div>
+    </section>
+
+    <div class="arrow arrow-down" onclick="scrollToNext()"></div>
+    <div class="arrow arrow-up" onclick="scrollToPrevious()" style="display: none;"></div>
+
+    <div class="footer">
+        <p>&copy; 2024 Skript.</p>
+    </div>
+
+    <script>
+        let currentSectionIndex = 0;
+        const sections = document.querySelectorAll('.section');
+        const navbarLinks = document.querySelectorAll('.navbar-link');
+        const totalSections = sections.length;
+        const arrowDown = document.querySelector('.arrow-down');
+        const arrowUp = document.querySelector('.arrow-up');
+        const footer = document.querySelector('.footer');
+
+        function updateNavbarHighlight() {
+            navbarLinks.forEach((link, index) => {
+                link.classList.toggle('active', index === currentSectionIndex);
+            });
+        }
+
+        function updateNavigationArrows() {
+            arrowUp.style.display = currentSectionIndex > 0 ? 'block' : 'none';
+            arrowDown.style.display = currentSectionIndex < totalSections - 1 ? 'block' : 'none';
+            footer.style.display = currentSectionIndex === totalSections - 1 ? 'block' : 'none';
+        }
+
+        navbarLinks.forEach((anchor, index) => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentSectionIndex = index;
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                updateNavbarHighlight();
+                updateNavigationArrows();
+            });
+        });
+
+        function scrollToNext() {
+            if (currentSectionIndex < totalSections - 1) {
+                currentSectionIndex++;
+                sections[currentSectionIndex].scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            updateNavbarHighlight();
+            updateNavigationArrows();
+        }
+
+        function scrollToPrevious() {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                sections[currentSectionIndex].scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            updateNavbarHighlight();
+            updateNavigationArrows();
+        }
+
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY > 0 && currentSectionIndex < totalSections - 1) {
+                scrollToNext();
+            } else if (e.deltaY < 0 && currentSectionIndex > 0) {
+                scrollToPrevious();
+            }
+        });
+    </script>
+</body>
+</html>
