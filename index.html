@@ -27,30 +27,37 @@
             padding: 10px;
             padding-right: 2%;
         }
-        .navbar a {
+        .navbar a, .navbar span {
             font-size: 1rem;
             font-weight: 350;
             color: lightgray;
             text-decoration: none;
             margin: 10px 0;
+            display: inline-block;
         }
-        .navbar a.active {
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: none;
+        }
+        .navbar a.active, .dot.active {
             color: white;
+        }
+        .dot.active {
+            background-color: white;
         }
         .section {
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        .section-title {
+        .section-title, .section-bodies {
             align-items: center;
             text-align: center;
-            justify-content: center;
-        }
-        .section-bodies {
-            /* Align horizontally left, vertically center */
-            align-items: flex-start;
-            text-align: left;
             justify-content: center;
         }
         .section-padding {
@@ -58,7 +65,7 @@
             width: 100%;
             box-sizing: border-box;
         }
-        .content { /* Specific styling for About section */
+        .content {
             align-items: flex-start;
             text-align: left;
         }
@@ -67,7 +74,6 @@
             border-width: 0 8px 8px 0;
             display: inline-block;
             padding: 13px;
-            transform: rotate(45deg);
             position: fixed;
             left: 50%;
             transform: translateX(-50%) rotate(45deg);
@@ -80,10 +86,10 @@
             transform: translateX(-50%) rotate(-135deg);
         }
         #home { background-color: black; }
-        #about { background-color: rgb(20,0,0); }
-        #members { background-color: rgb(0, 0, 30); }
-        #achievements { background-color: rgb(4, 20, 0); }
-        #reachout { background-color: rgb(0, 0, 0); }
+        #about { background-color: rgb(0, 24, 1); }
+        #members { background-color: rgb(0, 4, 24); }
+        #achievements { background-color: rgb(24, 0, 0); }
+        #reachout { background-color: rgb(20,20,20); }
         .footer {
             display: none;
             text-align: center;
@@ -93,134 +99,172 @@
             width: 100%;
             background-color: rgb(0, 0, 0);
         }
+
+        @media (min-width: 769px) {
+            .dot {
+                display: none !important; /* Ensure dots are not displayed on larger screens */
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            /*.navbar {*/
+            /*    position: static;*/
+            /*    transform: none;*/
+            /*    padding: 0;*/
+            /*    background-color: rgb(20,20,20); !* Adjust background to match your theme *!*/
+            /*    width: 100%;*/
+            /*    flex-direction: row;*/
+            /*    justify-content: space-around;*/
+            /*    margin-bottom: 20px;*/
+            /*}*/
+            .navbar a {
+                display: none; /* Hide text links on mobile */
+            }
+            .dot {
+                display: inline-block; /* Show dots on mobile */
+            }
+            .section {
+                align-items: center !important;
+            }
+            .section-padding, .content {
+                padding: 10px;
+                width: auto;
+            }
+            .arrow {
+                left: 90%;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white">
-    <nav class="navbar">
-        <a href="#home" class="navbar-link">Home</a>
-        <a href="#about" class="navbar-link">About</a>
-        <a href="#members" class="navbar-link">Members</a>
-        <a href="#achievements" class="navbar-link">Achievements</a>
-        <a href="#reachout" class="navbar-link">Reach Out</a>
-    </nav>
+<nav class="navbar">
+    <a href="#home" class="navbar-link">Home<span class="dot"></span></a>
+    <a href="#about" class="navbar-link">About<span class="dot"></span></a>
+    <a href="#members" class="navbar-link">Members<span class="dot"></span></a>
+    <a href="#achievements" class="navbar-link">Achievements<span class="dot"></span></a>
+    <a href="#reachout" class="navbar-link">Reach Out<span class="dot"></span></a>
+</nav>
+<section id="home" class="section section-title">
+    <h1 class="text-8xl font-semibold">&lt;/skript&gt;</h1>
+    <p class="text-xl mt-3">Ventures to the cyber world</p>
+</section>
 
-    <section id="home" class="section section-title">
-        <h1 class="text-8xl font-semibold">&lt;/skript&gt;</h1>
-        <p class="text-xl mt-3">Ventures to the cyber world</p>
-    </section>
-
-    <section id="about" class="section section-padding content section-bodies">
-        <div class="left" style="padding: 3%; width: 80%;">
+<section id="about" class="section section-padding content section-bodies">
+    <div class="left" style="padding: 3%; width: 80%;">
+        <section id="about-section" style="padding: 3%; width: 80%;">
             <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">About Us</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </section>
-
-    <section id="members" class="section section-padding section-bodies">
-        <div class="left">
-            <section id="member-hysong" style="padding: 3%; width: 80%;">
-                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Hoyoun Song</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-            <section id="member-khkim" style="padding: 3%; width: 80%;">
-                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Kihyon Kim</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-            <section id="member-smchoi" style="padding: 3%; width: 80%;">
-                <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Seongmin Choi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </section>
-        </div>
-    </section>
- 
-    <section id="achievements" class="section section-padding section-bodies">
-        <div class="">
-            <section style="padding: 3%; width: 80%;">
-                <h2 class="text-4xl font-bold" style="padding-bottom: 1%; width: max-content;">Something will be here...</h2>
-                <p></p>
-            </section>
-        </div>
-    </section>
-
-    <section id="reachout" class="section section-padding section-bodies">
-        <div class="">
-            <section style="padding: 3%; width: 80%;">
-                <h2 class="text-4xl font-bold" style="padding-bottom: 1%; width: max-content;">Reach Out</h2><br>
-                <p style="width: max-content;"><a href="mailto:contact@skript.one">📧 contact@skript.one</a></p>
-            </section>
-        </div>
-    </section>
-
-    <div class="arrow arrow-down" onclick="scrollToNext()"></div>
-    <div class="arrow arrow-up" onclick="scrollToPrevious()" style="display: none;"></div>
-
-    <div class="footer">
-        <p>&copy; 2024 Skript.</p>
+        </section>
     </div>
+</section>
 
-    <script>
-        let currentSectionIndex = 0;
-        const sections = document.querySelectorAll('.section');
-        const navbarLinks = document.querySelectorAll('.navbar-link');
-        const totalSections = sections.length;
-        const arrowDown = document.querySelector('.arrow-down');
-        const arrowUp = document.querySelector('.arrow-up');
-        const footer = document.querySelector('.footer');
+<section id="members" class="section section-padding content section-bodies">
+    <div class="left">
+        <section id="member-hysong" style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Hoyoun Song</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+        <section id="member-khkim" style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Kihyon Kim</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+        <section id="member-smchoi" style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%;">Seongmin Choi</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+    </div>
+</section>
 
-        function updateNavbarHighlight() {
-            navbarLinks.forEach((link, index) => {
-                link.classList.toggle('active', index === currentSectionIndex);
-            });
-        }
+<section id="achievements" class="section section-padding content section-bodies">
+    <div class="">
+        <section style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%; width: max-content;">Something will be here...</h2>
+            <p></p>
+        </section>
+    </div>
+</section>
 
-        function updateNavigationArrows() {
-            arrowUp.style.display = currentSectionIndex > 0 ? 'block' : 'none';
-            arrowDown.style.display = currentSectionIndex < totalSections - 1 ? 'block' : 'none';
-            footer.style.display = currentSectionIndex === totalSections - 1 ? 'block' : 'none';
-        }
+<section id="reachout" class="section section-padding content section-bodies">
+    <div class="">
+        <section style="padding: 3%; width: 80%;">
+            <h2 class="text-4xl font-bold" style="padding-bottom: 1%; width: max-content;">Reach Out</h2><br>
+            <p style="width: max-content;"><a href="mailto:contact@skript.one">contact@skript.one</a></p>
+        </section>
+    </div>
+</section>
 
-        navbarLinks.forEach((anchor, index) => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                currentSectionIndex = index;
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                updateNavbarHighlight();
-                updateNavigationArrows();
-            });
+<div class="arrow arrow-down" onclick="scrollToNext()"></div>
+<div class="arrow arrow-up" onclick="scrollToPrevious()" style="display: none;"></div>
+
+<div class="footer">
+    <p>&copy; 2024 Skript.</p>
+</div>
+
+<script>
+    let currentSectionIndex = 0;
+    const sections = document.querySelectorAll('.section');
+    const navbarLinks = document.querySelectorAll('.navbar-link');
+    const totalSections = sections.length;
+    const arrowDown = document.querySelector('.arrow-down');
+    const arrowUp = document.querySelector('.arrow-up');
+    const footer = document.querySelector('.footer');
+
+    function updateNavbarHighlight() {
+        navbarLinks.forEach((link, index) => {
+            link.classList.toggle('active', index === currentSectionIndex);
+            link.querySelector('.dot').classList.toggle('active', index === currentSectionIndex);
         });
+    }
 
-        function scrollToNext() {
-            if (currentSectionIndex < totalSections - 1) {
-                currentSectionIndex++;
-                sections[currentSectionIndex].scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            updateNavbarHighlight();
-            updateNavigationArrows();
-        }
+    function updateNavigationArrows() {
+        arrowUp.style.display = currentSectionIndex > 0 ? 'block' : 'none';
+        arrowDown.style.display = currentSectionIndex < totalSections - 1 ? 'block' : 'none';
+        footer.style.display = currentSectionIndex === totalSections - 1 ? 'block' : 'none';
+    }
 
-        function scrollToPrevious() {
-            if (currentSectionIndex > 0) {
-                currentSectionIndex--;
-                sections[currentSectionIndex].scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            updateNavbarHighlight();
-            updateNavigationArrows();
-        }
-
-        window.addEventListener('wheel', (e) => {
+    navbarLinks.forEach((anchor, index) => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            if (e.deltaY > 0 && currentSectionIndex < totalSections - 1) {
-                scrollToNext();
-            } else if (e.deltaY < 0 && currentSectionIndex > 0) {
-                scrollToPrevious();
-            }
+            currentSectionIndex = index;
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            updateNavbarHighlight();
+            updateNavigationArrows();
         });
-    </script>
+    });
+
+    function scrollToNext() {
+        if (currentSectionIndex < totalSections - 1) {
+            currentSectionIndex++;
+            sections[currentSectionIndex].scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        updateNavbarHighlight();
+        updateNavigationArrows();
+    }
+
+    function scrollToPrevious() {
+        if (currentSectionIndex > 0) {
+            currentSectionIndex--;
+            sections[currentSectionIndex].scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        updateNavbarHighlight();
+        updateNavigationArrows();
+    }
+
+    window.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (e.deltaY > 0 && currentSectionIndex < totalSections - 1) {
+            scrollToNext();
+        } else if (e.deltaY < 0 && currentSectionIndex > 0) {
+            scrollToPrevious();
+        }
+    });
+</script>
 </body>
 </html>
